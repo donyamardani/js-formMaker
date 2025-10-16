@@ -5,3 +5,103 @@
     list-style: none;
     border: none;
 }
+
+:root{
+    
+   /* --bgColor:#FFF2EB;
+    --shadow:0 0 10px 3px #FFDCDC;
+    --txtcolor:#FFD6BA;
+   */ 
+   
+    --txtColor:#161179;
+    --shadow:0 0 10px 3px #1B56FD;
+    --bgColor:#F1E7E7;
+
+}
+body{
+    background-color: var(--bgColor);
+    color: var(--txtColor);
+}
+#maker{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#maker h1{
+    margin: 20px auto;
+    font-weight: 900;
+    font-size: 50px;
+}
+#formMaker{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 20px;
+    width: 80%;
+    min-height: 300px;
+    margin: 5% auto;
+    justify-content: center;
+}
+#chengh-them{
+    position: fixed;
+    left: 5%;
+    top: 5%;
+    background-color: var(--txtColor);
+    color: var(--bgColor);
+    border-radius: 50%;
+    width: 50PX;
+    height: 50PX;
+}
+.inp{
+    width:45% ;
+    height: 60px;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    color:var(--txtColor);
+}
+#radio-box{
+    width: 45%;
+    height: 60px;
+    padding: 20px;
+    gap: 30px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    color: var(--txtColor);
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+form button{
+    width: 45%;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: var(--txtColor);
+    color: var(--bgColor);
+    box-shadow: var(--shadow);
+    font-size: 20px;
+    font-weight: 900;
+}
+
+#show{
+    /* width: 70%; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5%;
+    gap: 20px;
+    
+}
+.show-element {
+    width: 26%;
+    height:300px ;
+    box-shadow:var(--shadow);
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--bgColor);
+    color: var(--txt-Color);
+}

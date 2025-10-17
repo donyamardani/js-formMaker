@@ -148,29 +148,42 @@ const htmlTags=[
     let tagEl;
     formEl.addEventListener('submit',(e)=>{
         e.preventDefault()
-        let arrStyle=(styleEl.value).split(';').map(e=>{e.split('=')});
+        let arrStyle=(styleEl.value).split(';').map(e=>e.split('='));
         let arrClass=(classEl.value).split(',');
-        let arrAtt=(attEl.value).split(',').map(e=>{e.split('=')});
+        let arrAtt=(attEl.value).split(',').map(e=>e.split('='));
 
         tagEl=document.createElement(selectEl.value);
-        tagEl.texContent()=textEL.value;
+        tagEl.textContent=textEL.value;
 
         if(styleEl.value!=''){
             arrStyle.map(e=>{
-                tagEl.style.setProperty(e[0],e[1])
+                tagEl.style.setProperty(e[0],e[1]);
             })
-        }
+        };
         if(attEl.value!=''){
             arrAtt.map(e=>{
-                tagEl.style.setProperty(e[0],e[1])
+                tagEl.setAttribute(e[0],e[1]);
             })
-        }
+        };
         if(classEl.value!=''){
             arrClass.map(e=>{
-                tagEl.classList.add(e)
+                tagEl.classList.add(e);
             })
         }
+    });
+
+
+    divEl.map(e=>{
+        e.addEventListener('click',(e)=>{
+        switch(placeEl.value){
+            case 'prepend':e.target.prepend(tagEl);break;
+            case 'append':e.target.append(tagEl);break;
+            case 'before':e.target.before(tagEl);break;
+            case 'after':e.target.after(tagEl);break;
+        };
+        textEL.value='';
+        styleEl.value='';
+        attEl.value='';
+        classEl.value='';
     })
-
-
-    
+})

@@ -186,4 +186,18 @@ const htmlTags=[
         attEl.value='';
         classEl.value='';
     })
-})
+});
+
+
+let okRemove=false;
+removeBtnEl.addEventListener('click',()=>{
+    okRemove=true;
+});
+divEl.map(e=>{
+    e.addEventListener('click',()=>{
+        if(okRemove){
+            tagEl.remove()
+            okRemove=false;
+        }
+    })
+});

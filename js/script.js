@@ -11,7 +11,8 @@ let placeEl=[...document.querySelectorAll('#radio-box input')]
 let divEl=[...document.querySelectorAll('#show div')]
 let addBtnEl=document.querySelector('#add-element')
 let removeBtnEl=document.querySelector('#remove-element')
-let changeBtnEl=document.querySelector('#chengh-theme')
+let changeBtnEl=document.querySelector('#change-theme')
+let rootEl=document.querySelector(':root');
 const htmlTags=[
     "a",
     "abbr",
@@ -200,4 +201,40 @@ divEl.map(e=>{
             okRemove=false;
         }
     })
+});
+
+let isDark=false;
+
+
+window.addEventListener('load',()=>{
+    let localEl=localStorage.getItem('them');
+   localEl=localEl==0?1:0;
+    chenge(localEl);
+})
+
+
+let check=0;
+
+let chenge=(x)=>{
+if(x==0){
+    changeBtnEl.textContent='dark';
+    rootEl.style.setProperty('--bgColor','#F5FAE1');
+    rootEl.style.setProperty('--txtColor','#896C6C');
+    rootEl.style.setProperty(' --shadow','0 0 10px 3px #E5BEB5');
+    check=1;
+}else{
+    
+    changeBtnEl.textContent='light';
+    rootEl.style.setProperty('--bgColor','#896C6C');
+    rootEl.style.setProperty('--txtColor','#F5FAE1');
+    rootEl.style.setProperty(' --shadow','0 0 10px 3px #E5BEB5');
+    check=0;
+    isDark=true;
+}
+localStorage.setItem('them',check);
+};
+
+changeBtnEl.addEventListener('click',(e)=>{
+    e.preventDefault();
+    chenge(check);
 });

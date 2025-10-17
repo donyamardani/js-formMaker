@@ -24,7 +24,6 @@ body{
 }
 #maker{
     display: flex;
-    position: relative;
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -44,15 +43,16 @@ body{
     margin: 5% auto;
     justify-content: center;
 }
-#chengh-them{
+#change-theme{
+    width: 50px;
+    height: 50px;
     position: fixed;
     left: 5%;
     top: 5%;
     background-color: var(--txtColor);
     color: var(--bgColor);
+    box-shadow: var(--shadow);
     border-radius: 50%;
-    width: 50PX;
-    height: 50PX;
 }
 .inp{
     width:45% ;
